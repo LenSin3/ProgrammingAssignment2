@@ -1,9 +1,21 @@
-## Put comments here that give an overall description of what your
-## functions do
+## The following functions will create a matrix and cache the inverse of matrix 
+## This allows for a recall of the matrix instead of recomputing.
 
-## Write a short comment describing this function
+## Create function makeCacheMatrix containing list to set and get matrix
+## set and get inverse of matrix
 
 makeCacheMatrix <- function(x = matrix()) {
+  m <- NULL
+  set <- function(y) {
+    x <<- y
+    m <<- NULL
+  }
+  get <- function() x
+  set_Inverse <- function(inverse) m <<- inverse
+  get_Inverse <- function() m
+  list(set = set, get = get,
+       set_Inverse = set_Inverse,
+       get_Inverse = get_Inverse)
 
 }
 
